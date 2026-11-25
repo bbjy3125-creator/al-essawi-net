@@ -8,6 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -o ./*.zip
+      - run: |
+          echo "android.useAndroidX=true" > al-essawi-net-android/gradle.properties
+          echo "org.gradle.jvmargs=-Xmx2g" >> al-essawi-net-android/gradle.properties
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
